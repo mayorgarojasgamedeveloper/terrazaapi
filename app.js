@@ -1,12 +1,16 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
-//var path = require('cors');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var clientRouter = require('./routes/cliente');
+var eventRouter = require('./routes/evento');
+var packageRouter = require('./routes/paquete');
+var pendingRouter = require('./routes/pendiente');
+var providerRouter = require('./routes/proveedor');
+var userRouter = require('./routes/usuario');
 
 var app = express();
 
@@ -15,14 +19,18 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 app.use(logger('dev'));
-//app.use('cors');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/client', clientRouter);
+app.use('/event', eventRouter);
+app.use('/package', packageRouter);
+app.use('/pending', pendingRouter);
+app.use('/provider', providerRouter);
+app.use('/user', userRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
