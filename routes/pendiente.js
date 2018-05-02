@@ -7,8 +7,8 @@ router.post('/', function(req, res, next) {
   res.json(response);
 });
 
-router.get('/', function(req, res, next) {
-  var response = controller.list(req, res);
+router.get('/', async function(req, res, next) {
+  var response = await controller.list(req, res);
   res.json(response);
 });
 

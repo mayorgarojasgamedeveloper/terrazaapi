@@ -1,4 +1,4 @@
-var db = require('../assets/dbInterface');
+var db = require('../db');
 
 exports.create = function() {
   var response = db.INSERT();

@@ -5,6 +5,11 @@ exports.create = function(req, res) {
   return response;
 };
 
+exports.find = function(req, res) {
+  var response = model.find();
+  return response;
+};
+
 exports.list = function(req, res) {
   var response = model.list();
   return response;
