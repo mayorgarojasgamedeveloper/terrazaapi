@@ -63,3 +63,10 @@ exports.DELETE = async function(table_name, condition) {
   const { rows } = await client.query(sql);
   return rows;
 }
+
+exports.NOW = async function() {
+
+  var sql = `SELECT NOW()`;
+  const { rows } = await client.query(sql);
+  return rows;
+}
