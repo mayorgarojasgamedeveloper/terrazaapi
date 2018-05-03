@@ -2,8 +2,8 @@ var express = require('express');
 var controller = require('../controllers/usuarioController');
 var router = express.Router();
 
-router.post('/', function(req, res, next) {
-  var response = controller.create(req, res);
+router.post('/', async function(req, res, next) {
+  var response = await controller.create(req, res);
   res.json(response);
 });
 
@@ -12,23 +12,23 @@ router.get('/', async function(req, res, next) {
   res.json(response);
 });
 
-router.get('/:username/:password', function(req, res, next) {
-  var response = controller.find(req, res);
+router.get('/:username/:password', async function(req, res, next) {
+  var response = await controller.find(req, res);
   res.json(response);
 });
 
-router.get('/:id', function(req, res, next) {
-  var response = controller.view(req, res);
+router.get('/:id', async function(req, res, next) {
+  var response = await controller.view(req, res);
   res.json(response);
 });
 
-router.put('/', function(req, res, next) {
-  var response = controller.edit(req, res);
+router.put('/', async function(req, res, next) {
+  var response = await controller.edit(req, res);
   res.json(response);
 });
 
-router.delete('/', function(req, res, next) {
-  var response = controller.delete(req, res);
+router.delete('/', async function(req, res, next) {
+  var response = await controller.delete(req, res);
   res.json(response);
 });
 

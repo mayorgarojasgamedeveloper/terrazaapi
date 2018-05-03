@@ -20,31 +20,36 @@ exports.INSERT = async function(table_name, columns, values, contition = null, r
   var sql = ``;
   sql += `INSERT INTO ${table_name} (${columns})`;
   sql += ` VALUES (${values})`;
-  if(contition)
+  if(contition !== null)
     sql += ` WHERE ${contition}`;
-  if(returning)
+  if(returning !== null)
     sql += ` RETURNING ${returning}`;
 
   const { rows } = await client.query(sql);
   return rows;
 }
 
-exports.SELECT = async function(table_name, columns = '*') {
+exports.SELECT = async function(table_name, columns = '*', condition = null) {
 
   var sql = ``;
   sql += `SELECT ${columns}`;
-  sql += `FROM ${table_name}`;
+  sql += ` FROM ${table_name}`;
+  if(condition !== null)
+    sql += ` WHERE ${condition}`;
 
   const { rows } = await client.query(sql);
+  console.log(rows);
   return rows;
 }
 
-exports.UPDATE = async function(table_name, setters, condition) {
+exports.UPDATE = async function(table_name, setters, condition, returning = null) {
 
   var sql = ``;
   sql += `UPDATE ${table_name}`;
-  sql += `SET ${setters}`;
-  sql += `WHERE ${condition}`;
+  sql += ` SET ${setters}`;
+  sql += ` WHERE ${condition}`;
+  if(returning !== null)
+    sql += ` RETURNING ${returning}`;
 
   const { rows } = await client.query(sql);
   return rows;
@@ -54,8 +59,7 @@ exports.DELETE = async function(table_name, condition) {
 
   var sql = ``;
   sql += `DELETE FROM ${table_name}`;
-  sql += `WHERE ${condition}`;
-
+  sql += ` WHERE ${condition}`;
   const { rows } = await client.query(sql);
   return rows;
 }
