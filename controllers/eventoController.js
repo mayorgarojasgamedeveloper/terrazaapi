@@ -1,7 +1,7 @@
 var model = require('../models/eventoModel');
 
 exports.create = function(req, res) {
-  var response = model.create(req.body.dateStart,req.body.dateEnd,req.body.persons);
+  var response = model.create(req.body.client_id,req.body.dateStart,req.body.dateEnd,req.body.persons);
   return response;
 };
 
@@ -21,7 +21,7 @@ exports.view = function(req, res) {
 };
 
 exports.edit = function(req, res) {
-  var response = model.edit(req.body.id,req.body.dateStart,req.body.dateEnd,req.body.persons);
+  var response = model.edit(req.body.id,req.body.client_id,req.body.dateStart,req.body.dateEnd,req.body.persons);
   return response;
 };
 

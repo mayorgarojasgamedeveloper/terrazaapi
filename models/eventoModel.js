@@ -1,9 +1,9 @@
 var db = require('../db');
 
-exports.create = function(dateStart,dateEnd,persons) {
+exports.create = function(client_id,dateStart,dateEnd,persons) {
   var response = db.INSERT(`events`,
-  `dateStart,dateEnd,persons`,
-  `\'${dateStart}\',\'${dateEnd}\',\'${persons}\'`,
+  `client_id,dateStart,dateEnd,persons`,
+  `${client_id},\'${dateStart}\',\'${dateEnd}\',\'${persons}\'`,
   null,
   `*`);
   return response;
@@ -24,9 +24,9 @@ exports.view = function(id) {
   return response;
 };
 
-exports.edit = function(id,dateStart,dateEnd,persons) {
+exports.edit = function(id,client_id,dateStart,dateEnd,persons) {
   var response = db.UPDATE(`events`,
-  `dateStart=\'${dateStart}\',dateEnd=\'${dateEnd}\',persons=\'${persons}\'`,
+  `client_id=\'${client_id}\',dateStart=\'${dateStart}\',dateEnd=\'${dateEnd}\',persons=\'${persons}\'`,
   `id=${id}`,
   `*`);
   return response;
