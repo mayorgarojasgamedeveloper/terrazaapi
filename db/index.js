@@ -1,10 +1,7 @@
 var {Client} = require('pg');
 var Router = require('express-promise-router');
 
-var URL =
-process.env.URL ||
-'postgresql://postgres:admin@localhost/donleon'
-;
+var URL = 'postgres://dnwnqleoapywpz:54d4dafd1fa77c603b55a6a8f2cc6424ee83fe66382d7d9126bcd46078031e58@ec2-23-23-248-192.compute-1.amazonaws.com:5432/d4uio1gl8m9cga';
 
 var client = new Client(URL);
 
