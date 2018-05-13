@@ -21,8 +21,8 @@ app.set('view engine', 'jade');
 // Cors
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", '*');
-    res.header("Access-Control-Allow-Credentials", false);
-    res.header('Access-Control-Allow-Methods', '*');
+    res.header("Access-Control-Allow-Credentials", true);
+    res.header('Access-Control-Allow-Methods', 'post,get,put,delete');
     res.header("Access-Control-Allow-Headers", '*');
     next();
 });
