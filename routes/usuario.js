@@ -4,6 +4,10 @@ var router = express.Router();
 
 router.post('/', async function(req, res, next) {
   var response = await controller.create(req, res);
+
+  res.header("Access-Control-Allow-Origin: *");
+  res.header("Access-Control-Allow-Credentials: true");
+
   res.json(response);
 });
 
