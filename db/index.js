@@ -13,7 +13,6 @@ client.connect((err) => {
 });
 
 exports.INSERT = function(table_name, columns, values, contition = null, returning = null) {
-
   var sql = ``;
   sql += `INSERT INTO ${table_name} (${columns})`;
   sql += ` VALUES (${values})`;
@@ -22,6 +21,7 @@ exports.INSERT = function(table_name, columns, values, contition = null, returni
   if(returning !== null)
     sql += ` RETURNING ${returning}`;
 
+  return {sql: sql};
   const resp = client.query(sql);
   return resp;
 }
