@@ -1,12 +1,21 @@
 var db = require('../db');
 
 exports.create = function(username,password,name,last_name,email,phone) {
-  var response = db.INSERT(`users`,
+  /*var response = db.INSERT(`users`,
   `username,password,name,last_name,email,phone`,
   `\'${username}\',\'${password}\',\'${name}\',\'${last_name}\',\'${email}\',\'${phone}\'`,
   null,
   `*`);
-  return response;
+  return response;*/
+
+  return {
+    username: username,
+    password: password,
+    name: name,
+    last_name: last_name,
+    email: email,
+    phone: phone
+  }
 };
 
 exports.find = function(username,password) {
