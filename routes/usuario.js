@@ -2,34 +2,46 @@ var express = require('express');
 var controller = require('../controllers/usuarioController');
 var router = express.Router();
 
-router.post('/', async function(req, res, next) {
-  var response = await controller.create(req, res);
-  res.json(response);
+router.post('/', function(req, res, next) {
+  var response = controller.create(req, res);
+  response.then(function(result) {
+    res.json(result.rows);
+  });
 });
 
-router.get('/', async function(req, res, next) {
-  var response = await controller.list(req, res);
-  res.json(response);
+router.get('/', function(req, res, next) {
+  var response = controller.list(req, res);
+  response.then(function(result) {
+    res.json(result.rows);
+  });
 });
 
-router.get('/:username/:password', async function(req, res, next) {
-  var response = await controller.find(req, res);
-  res.json(response);
+router.get('/:username/:password', function(req, res, next) {
+  var response = controller.find(req, res);
+  response.then(function(result) {
+    res.json(result.rows);
+  });
 });
 
-router.get('/:id', async function(req, res, next) {
-  var response = await controller.view(req, res);
-  res.json(response);
+router.get('/:username', function(req, res, next) {
+  var response = controller.view(req, res);
+  response.then(function(result) {
+    res.json(result.rows);
+  });
 });
 
-router.put('/', async function(req, res, next) {
-  var response = await controller.edit(req, res);
-  res.json(response);
+router.put('/', function(req, res, next) {
+  var response = controller.edit(req, res);
+  response.then(function(result) {
+    res.json(result.rows);
+  });
 });
 
-router.delete('/', async function(req, res, next) {
-  var response = await controller.delete(req, res);
-  res.json(response);
+router.delete('/', function(req, res, next) {
+  var response = controller.delete(req, res);
+  response.then(function(result) {
+    res.json(result.rows);
+  });
 });
 
 module.exports = router;

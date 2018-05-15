@@ -2,44 +2,60 @@ var express = require('express');
 var controller = require('../controllers/eventoController');
 var router = express.Router();
 
-router.post('/', async function(req, res, next) {
-  var response = await controller.create(req, res);
-  res.json(response);
+router.post('/', function(req, res, next) {
+  var response = controller.create(req, res);
+  response.then(function(result) {
+    res.json(result.rows);
+  });
 });
 
-router.get('/', async function(req, res, next) {
-  var response = await controller.list(req, res);
-  res.json(response);
+router.get('/', function(req, res, next) {
+  var response = controller.list(req, res);
+  response.then(function(result) {
+    res.json(result.rows);
+  });
 });
 
-router.get('/:id', async function(req, res, next) {
-  var response = await controller.view(req, res);
-  res.json(response);
+router.get('/:id', function(req, res, next) {
+  var response = controller.view(req, res);
+  response.then(function(result) {
+    res.json(result.rows);
+  });
 });
 
-router.put('/', async function(req, res, next) {
-  var response = await controller.edit(req, res);
-  res.json(response);
+router.put('/', function(req, res, next) {
+  var response = controller.edit(req, res);
+  response.then(function(result) {
+    res.json(result.rows);
+  });
 });
 
-router.delete('/', async function(req, res, next) {
-  var response = await controller.delete(req, res);
-  res.json(response);
+router.delete('/', function(req, res, next) {
+  var response = controller.delete(req, res);
+  response.then(function(result) {
+    res.json(result.rows);
+  });
 });
 
-router.get('/:id/package', async function(req, res, next) {
-  var response = await controller.listPackage(req, res);
-  res.json(response);
+router.get('/:id/package', function(req, res, next) {
+  var response = controller.listPackage(req, res);
+  response.then(function(result) {
+    res.json(result.rows);
+  });
 });
 
-router.post('/package', async function(req, res, next) {
-  var response = await controller.createPackage(req, res);
-  res.json(response);
+router.post('/package', function(req, res, next) {
+  var response = controller.createPackage(req, res);
+  response.then(function(result) {
+    res.json(result.rows);
+  });
 });
 
-router.delete('/package', async function(req, res, next) {
-  var response = await controller.deletePackage(req, res);
-  res.json(response);
+router.delete('/package', function(req, res, next) {
+  var response = controller.deletePackage(req, res);
+  response.then(function(result) {
+    res.json(result.rows);
+  });
 });
 
 module.exports = router;

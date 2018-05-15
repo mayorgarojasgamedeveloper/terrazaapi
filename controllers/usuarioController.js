@@ -16,7 +16,7 @@ exports.list = function(req, res) {
 };
 
 exports.view = function(req, res) {
-  var response = model.view(req.params.id);
+  var response = model.view(req.params.username);
   return response;
 };
 

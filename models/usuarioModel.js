@@ -19,8 +19,8 @@ exports.list = function() {
   return response;
 };
 
-exports.view = function(id) {
-  var response = db.SELECT(`users`, `*`, `id=${id}`);
+exports.view = function(username) {
+  var response = db.SELECT(`users`, `*`, `username=\'${username}\'`);
   return response;
 };
 
