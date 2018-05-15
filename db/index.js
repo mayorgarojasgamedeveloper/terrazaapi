@@ -21,7 +21,6 @@ exports.INSERT = function(table_name, columns, values, contition = null, returni
   if(returning !== null)
     sql += ` RETURNING ${returning}`;
 
-  return {sql: sql};
   const resp = client.query(sql);
   return resp;
 }
