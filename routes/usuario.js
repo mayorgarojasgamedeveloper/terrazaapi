@@ -1,9 +1,8 @@
 var express = require('express');
 var controller = require('../controllers/usuarioController');
-var cors = require('cors');
 var router = express.Router();
 
-router.post('/', cors(), async function(req, res, next) {
+router.post('/', async function(req, res, next) {
   var response = await controller.create(req, res);
   res.json(response);
 });
