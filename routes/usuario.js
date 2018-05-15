@@ -4,9 +4,10 @@ var router = express.Router();
 
 router.post('/', function(req, res, next) {
   var response = controller.create(req, res);
-  response.then(function(result) {
-    res.json(result.rows);
-  });
+  //response.then(function(result) {
+  //  res.json(result.rows);
+  //});
+  res.json(response);
 });
 
 router.get('/', function(req, res, next) {
