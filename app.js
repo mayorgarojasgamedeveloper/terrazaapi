@@ -32,6 +32,11 @@ app.use(express.static(path.join(__dirname, 'public')));
   res.header('Access-Control-Allow-Headers', 'Content-Type');
   next();
 });*/
+var corsOptions = {
+  origin: 'https://iammafer.000webhostapp.com',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+
 app.use(cors());
 app.use('/', indexRouter);
 app.use('/client', clientRouter);
