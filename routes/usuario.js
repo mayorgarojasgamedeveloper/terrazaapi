@@ -3,8 +3,8 @@ var controller = require('../controllers/usuarioController');
 var router = express.Router();
 
 router.post('/', async function(req, res, next) {
-  var response = await controller.create(req, res);
-  res.json(response);
+  //var response = await controller.create(req, res);
+  res.json({response: test});
 });
 
 router.get('/', async function(req, res, next) {
