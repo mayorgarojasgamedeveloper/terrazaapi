@@ -4,7 +4,7 @@ var router = express.Router();
 
 router.post('/', async function(req, res, next) {
   //var response = await controller.create(req, res);
-  res.json({response: test});
+  res.json({response: req.body.username});
 });
 
 router.get('/', async function(req, res, next) {
