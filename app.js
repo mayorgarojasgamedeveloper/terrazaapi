@@ -38,6 +38,8 @@ var corsOptions = {
 }
 
 app.use(cors());
+app.options('*', cors()) // include before other routes
+
 app.use('/', indexRouter);
 app.use('/client', clientRouter);
 app.use('/event', eventRouter);
