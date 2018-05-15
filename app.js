@@ -19,12 +19,13 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 // Cors
-app.all('*', function (req, res, next) {
-  res.header('Access-Control-Allow-Origin', 'https://iammafer.000webhostapp.com');
-  res.header('Access-Control-Allow-Headers', 'Content-Type,Content-Length, Authorization, Accept,X-Requested-With');
-  res.header('Access-Control-Allow-Methods', 'PUT,POST,GET,DELETE,OPTIONS');
+/*app.all('*', function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "https://iammafer.000webhostapp.com");
+  res.header("Access-Control-Allow-Headers");
+  res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
   next();
-});
+});*/
+
 
 app.use(logger('dev'));
 app.use(express.json());
