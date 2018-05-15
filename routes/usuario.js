@@ -3,9 +3,6 @@ var controller = require('../controllers/usuarioController');
 var router = express.Router();
 
 router.post('/', async function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "https://iammafer.000webhostapp.com");
-  res.header("Access-Control-Allow-Headers");
-  
   var response = await controller.create(req, res);
   res.json(response);
 });
