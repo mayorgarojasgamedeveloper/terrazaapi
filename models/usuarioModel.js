@@ -24,6 +24,11 @@ exports.view = function(username) {
   return response;
 };
 
+exports.viewId = function(id) {
+  var response = db.SELECT(`users`, `*`, `id=${id}`);
+  return response;
+};
+
 exports.edit = function(id,username,password,name,last_name,email,phone) {
   var response = db.UPDATE(`users`,
   `username=\'${username}\',password=\'${password}\',name=\'${name}\',last_name=\'${last_name}\',email=\'${email}\',phone=\'${phone}\'`,

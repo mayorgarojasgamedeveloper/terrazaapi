@@ -30,6 +30,13 @@ router.get('/:username', function(req, res, next) {
   });
 });
 
+router.get('/id/:id', function(req, res, next) {
+  var response = controller.viewId(req, res);
+  response.then(function(result) {
+    res.json(result.rows);
+  });
+});
+
 router.put('/', function(req, res, next) {
   var response = controller.edit(req, res);
   response.then(function(result) {

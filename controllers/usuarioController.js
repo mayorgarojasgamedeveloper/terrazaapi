@@ -20,6 +20,12 @@ exports.view = function(req, res) {
   return response;
 };
 
+exports.viewId = function(req, res) {
+  var response = model.viewId(req.params.id);
+  return response;
+};
+
+
 exports.edit = function(req, res) {
   var response = model.edit(req.body.id,req.body.username,req.body.password,req.body.name,req.body.last_name,req.body.email,req.body.phone);
   return response;
