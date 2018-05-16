@@ -33,6 +33,7 @@ exports.SELECT = function(table_name, columns = '*', condition = null) {
   if(condition !== null)
     sql += ` WHERE ${condition}`;
 
+    console.log(sql);
   const resp = client.query(sql);
   return resp;
 }
