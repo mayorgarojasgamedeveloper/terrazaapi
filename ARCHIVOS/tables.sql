@@ -1,7 +1,7 @@
 create table users (
 	id				serial not null,
     username		varchar(20) not null unique,
-    password		varchar(20) not null,
+    password		varchar(40) not null,
     --GENERAL INFORMATION
     name			varchar(40),
     last_name		varchar(40),
