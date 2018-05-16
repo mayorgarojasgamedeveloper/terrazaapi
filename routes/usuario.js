@@ -23,15 +23,15 @@ router.get('/:username/:password', function(req, res, next) {
   });
 });
 
-router.get('/:username', function(req, res, next) {
-  var response = controller.view(req, res);
+router.get('/id/:id', function(req, res, next) {
+  var response = controller.viewId(req, res);
   response.then(function(result) {
     res.json(result.rows);
   });
 });
 
-router.get('/id/:id', function(req, res, next) {
-  var response = controller.viewId(req, res);
+router.get('/:username', function(req, res, next) {
+  var response = controller.view(req, res);
   response.then(function(result) {
     res.json(result.rows);
   });
