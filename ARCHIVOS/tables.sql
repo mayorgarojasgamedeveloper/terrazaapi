@@ -45,6 +45,7 @@ create table pending (
 );
 create table events (
 	id				serial not null,
+    client			varchar(80) not null,
     dateStart		timestamp not null,
     dateEnd			timestamp not null,
     persons			int not null,
