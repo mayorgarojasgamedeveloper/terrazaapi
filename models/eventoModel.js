@@ -1,9 +1,9 @@
 var db = require('../db');
 
-exports.create = function(client,dateStart,dateEnd,persons) {
+exports.create = function(client_id,dateStart,dateEnd,persons) {
   var response = db.INSERT(`events`,
-  `client,dateStart,dateEnd,persons`,
-  `\'${client}\',\'${dateStart}\',\'${dateEnd}\',\'${persons}\'`,
+  `client_id,dateStart,dateEnd,persons`,
+  `${client},\'${dateStart}\',\'${dateEnd}\',\'${persons}\'`,
   null,
   `*`);
   return response;

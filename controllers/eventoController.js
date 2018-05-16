@@ -1,7 +1,7 @@
 var model = require('../models/eventoModel');
 
 exports.create = function(req, res) {
-  var response = model.create(req.body.client,req.body.dateStart,req.body.dateEnd,req.body.persons);
+  var response = model.create(req.body.client_id,req.body.dateStart,req.body.dateEnd,req.body.persons);
   return response;
 };
 
